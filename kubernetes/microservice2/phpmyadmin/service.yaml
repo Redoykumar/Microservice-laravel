@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice2-phpmyadmin-service
+spec:
+  selector:
+    app: microservice2-phpmyadmin
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort  # Use NodePort to expose phpMyAdmin

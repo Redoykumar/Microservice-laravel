@@ -1,0 +1,46 @@
+- app
+  - ambassador
+    - config.yaml
+    - envoy.yaml
+  - microservice1
+    - src
+    - tests
+  - microservice2
+    - src 
+    - tests
+- create_project_structure.sh
+- docker-compose.yaml
+- kubernetes
+  - ambassador
+    - deploy.sh
+    - deployment.yaml
+    - service.yaml
+  - microservice1
+    - mysql
+      - deploy.sh
+      - deployment.yaml
+      - service.yaml
+    - phpmyadmin
+      - deploy.sh
+      - deployment.yaml
+      - service.yaml
+    - src
+      - Dockerfile
+      - deploy.sh
+      - deployment.yaml
+      - service.yaml
+  - microservice2
+    - mysql
+      - deploy.sh
+      - deployment.yaml
+      - service.yaml
+    - phpmyadmin
+      - deploy.sh
+      - deployment.yaml
+      - service.yaml
+    - src
+      - Dockerfile
+      - deploy.sh
+      - deployment.yaml
+      - service.yaml
+- project_structure.text

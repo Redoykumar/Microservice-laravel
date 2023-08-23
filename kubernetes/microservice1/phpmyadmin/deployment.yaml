@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice1-phpmyadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservice1-phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: microservice1-phpmyadmin
+    spec:
+      containers:
+        - name: phpmyadmin
+          image: phpmyadmin/phpmyadmin
+          env:
+            - name: PMA_HOST
+              value: microservice1-mysql-service
+            - name: PMA_PORT
+              value: "3306"
+          ports:
+            - containerPort: 80
+

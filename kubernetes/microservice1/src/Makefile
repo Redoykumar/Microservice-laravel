@@ -1,0 +1,25 @@
+deploy:
+	eval $(minikube -p minikube docker-env)
+	docker build -t microservice1-image:latest ../../../app/microservice1/
+	kubectl apply -f deployment.yaml
+	kubectl apply -f service.yaml
+
+apply:
+	kubectl apply -f deployment.yaml
+	kubectl apply -f service.yaml
+
+delete:
+	kubectl delete -f deployment.yaml
+	kubectl delete -f service.yaml
+
+build:
+	docker build -t microservice1-image:latest ../../../app/microservice1/
+rm-image:
+	docker image rm microservice1-image:latest 
+env:
+	eval $(minikube -p minikube docker-env)
+
+destroy:
+	kubectl delete -f deployment.yaml
+	kubectl delete -f service.yaml
+	docker  rmi microservice1-image:latest -f

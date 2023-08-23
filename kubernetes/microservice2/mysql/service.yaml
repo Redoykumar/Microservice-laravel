@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice2-mysql-service
+spec:
+  selector:
+    app: microservice2-mysql
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
